@@ -5,6 +5,7 @@ import { SidebarService } from '../../Core/Services/sidebar.service';
 
 @Component({
   selector: 'app-admin-layout',
+  standalone: true,
   imports: [RouterOutlet, SideBar],
   templateUrl: './admin-layout.html',
   styleUrl: './admin-layout.css',
