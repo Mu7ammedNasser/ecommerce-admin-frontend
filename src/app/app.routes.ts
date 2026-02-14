@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: Login },
   {
-    path: 'admin',
+    path: '',
     component: AdminLayout,
     children: [
       { path: '', redirectTo: 'products', pathMatch: 'full' },
