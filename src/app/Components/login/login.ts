@@ -44,10 +44,10 @@ export class Login {
 
     const { email, password } = this.loginForm.value;
 
-    this.authService.login({ email, password }).subscribe({
+    this.authService.login({ email: email!, password: password! }).subscribe({
       next: (res: any) => {
-        if (Array.isArray(res) && res.length > 0) {
-          const user = res[0];
+        const user = Array.isArray(res) ? res[0] : res?.user ?? res;
+        if (user && (user.email || user.id)) {
           localStorage.setItem('user', JSON.stringify(user));
           this.router.navigate(['/admin']);
         } else {
