@@ -49,7 +49,7 @@ export class Login {
         const user = Array.isArray(res) ? res[0] : res?.user ?? res;
         if (user && (user.email || user.id)) {
           localStorage.setItem('user', JSON.stringify(user));
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/products']);
         } else {
           this.errorMessage.set('Invalid email or password');
         }
